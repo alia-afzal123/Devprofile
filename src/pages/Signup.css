@@ -1,0 +1,195 @@
+
+.signup-shell {
+  min-height: 780px;
+}
+
+
+/* =========================
+   Form Layout
+========================= */
+
+.signup-form-panel {
+  padding-top: 42px;
+  padding-bottom: 28px;
+}
+
+.signup-form-wrapper {
+  width: min(100%, 440px);
+}
+
+.signup-heading {
+  margin-bottom: 26px;
+}
+
+.signup-heading h1 {
+  font-size: clamp(30px, 2.7vw, 39px);
+}
+
+
+/* Slightly tighter fields because Signup has more content */
+
+.signup-form .form-field {
+  margin-bottom: 16px;
+}
+
+.signup-form .input-wrapper input {
+  height: 48px;
+}
+
+
+/* =========================
+   Terms
+========================= */
+
+.terms-row {
+  margin: 2px 0 20px;
+
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+
+  color: var(--text-secondary);
+
+  font-size: 12px;
+  line-height: 1.55;
+
+  cursor: pointer;
+}
+
+.terms-row input {
+  width: 16px;
+  height: 16px;
+
+  margin: 2px 0 0;
+
+  flex-shrink: 0;
+
+  accent-color: var(--accent);
+
+  cursor: pointer;
+}
+
+.terms-row a {
+  color: var(--accent);
+
+  text-decoration: none;
+
+  font-weight: 600;
+}
+
+.terms-row a:hover {
+  text-decoration: underline;
+}
+
+
+/* =========================
+   Divider
+========================= */
+
+.signup-divider {
+  margin-top: 22px;
+  margin-bottom: 18px;
+}
+
+
+/* =========================
+   Focus
+========================= */
+
+.terms-row a:focus-visible,
+.terms-row input:focus-visible {
+  outline: 3px solid var(--focus-ring);
+  outline-offset: 3px;
+}
+
+
+/* =========================================================
+   Tablet
+========================================================= */
+
+@media (max-width: 1050px) {
+  .signup-shell {
+    min-height: 740px;
+  }
+
+  .signup-form-panel {
+    padding:
+      38px
+      40px
+      26px;
+  }
+}
+
+
+/* =========================================================
+   Stacked Tablet
+========================================================= */
+
+@media (max-width: 860px) {
+  .signup-shell {
+    min-height: 0;
+  }
+
+  .signup-form-panel {
+    padding:
+      44px
+      42px
+      28px;
+  }
+}
+
+
+/* =========================================================
+   Mobile
+========================================================= */
+
+@media (max-width: 600px) {
+  .signup-form-panel {
+    padding:
+      34px
+      20px
+      24px;
+  }
+
+  .signup-heading {
+    margin-bottom: 24px;
+  }
+
+  .signup-heading h1 {
+    font-size: 30px;
+  }
+
+  .signup-form .form-field {
+    margin-bottom: 15px;
+  }
+
+  .signup-form .input-wrapper input {
+    height: 49px;
+  }
+
+  .terms-row {
+    margin-bottom: 18px;
+  }
+}
+
+
+/* =========================================================
+   Small Mobile
+========================================================= */
+
+@media (max-width: 380px) {
+  .signup-form-panel {
+    padding:
+      32px
+      16px
+      22px;
+  }
+
+  .signup-heading h1 {
+    font-size: 28px;
+  }
+
+  .terms-row {
+    font-size: 11px;
+  }
+}

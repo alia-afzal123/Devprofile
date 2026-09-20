@@ -1,0 +1,516 @@
+/* =========================================
+   DEVPROFILE — DASHBOARD AI COPILOT
+   ========================================= */
+
+
+/* ---------- Floating Trigger Button ---------- */
+
+.ai-copilot-trigger {
+  position: fixed;
+  right: 28px;
+  bottom: 28px;
+
+  width: 58px;
+  height: 58px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: none;
+  border-radius: 18px;
+
+  background: linear-gradient(
+    135deg,
+    #6d4aff 0%,
+    #8b5cf6 100%
+  );
+
+  color: #ffffff;
+  font-size: 25px;
+
+  cursor: pointer;
+  z-index: 1000;
+
+  box-shadow:
+    0 12px 30px rgba(109, 74, 255, 0.28),
+    0 4px 10px rgba(109, 74, 255, 0.15);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.ai-copilot-trigger:hover {
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 16px 36px rgba(109, 74, 255, 0.35),
+    0 6px 14px rgba(109, 74, 255, 0.18);
+}
+
+.ai-copilot-trigger:active {
+  transform: translateY(0);
+}
+
+
+/* ---------- Main Copilot Panel ---------- */
+
+.ai-copilot {
+  position: fixed;
+
+  right: 28px;
+  bottom: 28px;
+
+  width: 390px;
+  height: 590px;
+  max-height: calc(100vh - 56px);
+
+  display: flex;
+  flex-direction: column;
+
+  background: #ffffff;
+
+  border: 1px solid #ebe8ff;
+  border-radius: 22px;
+
+  overflow: hidden;
+
+  z-index: 1000;
+
+  box-shadow:
+    0 24px 60px rgba(34, 24, 74, 0.16),
+    0 8px 24px rgba(109, 74, 255, 0.08);
+}
+
+
+/* ---------- Header ---------- */
+
+.ai-copilot-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  gap: 18px;
+
+  padding: 21px 22px 18px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(109, 74, 255, 0.08),
+      rgba(139, 92, 246, 0.03)
+    );
+
+  border-bottom: 1px solid #efecff;
+}
+
+.ai-copilot-header > div {
+  min-width: 0;
+}
+
+.ai-copilot-label {
+  display: inline-flex;
+  align-items: center;
+
+  margin-bottom: 7px;
+
+  color: #6d4aff;
+
+  font-size: 10px;
+  font-weight: 800;
+
+  letter-spacing: 1.2px;
+}
+
+.ai-copilot-header h3 {
+  margin: 0;
+
+  color: #201b33;
+
+  font-size: 18px;
+  font-weight: 750;
+  line-height: 1.25;
+}
+
+.ai-copilot-header p {
+  margin: 5px 0 0;
+
+  color: #8b8799;
+
+  font-size: 12px;
+  line-height: 1.45;
+}
+
+
+/* ---------- Close Button ---------- */
+
+.ai-copilot-close {
+  flex-shrink: 0;
+
+  width: 32px;
+  height: 32px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid #e9e5f8;
+  border-radius: 10px;
+
+  background: rgba(255, 255, 255, 0.85);
+
+  color: #777184;
+
+  font-size: 21px;
+  line-height: 1;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.ai-copilot-close:hover {
+  color: #5f3ff2;
+  background: #f7f5ff;
+  border-color: #dcd4ff;
+}
+
+
+/* ---------- Body ---------- */
+
+.ai-copilot-body {
+  flex: 1;
+  min-height: 0;
+
+  padding: 20px;
+
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  background: #ffffff;
+
+  scrollbar-width: thin;
+  scrollbar-color: #dcd6fa transparent;
+}
+
+.ai-copilot-body::-webkit-scrollbar {
+  width: 5px;
+}
+
+.ai-copilot-body::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.ai-copilot-body::-webkit-scrollbar-thumb {
+  background: #dcd6fa;
+  border-radius: 20px;
+}
+
+
+/* ---------- Empty / Welcome State ---------- */
+
+.ai-copilot-welcome {
+  display: flex;
+  flex-direction: column;
+
+  gap: 17px;
+}
+
+.ai-copilot-welcome > p {
+  margin: 0;
+
+  padding: 14px 15px;
+
+  color: #5f596c;
+  background: #faf9ff;
+
+  border: 1px solid #efecff;
+  border-radius: 14px;
+
+  font-size: 13px;
+  line-height: 1.65;
+}
+
+
+/* ---------- Suggested Questions ---------- */
+
+.ai-copilot-suggestions {
+  display: flex;
+  flex-direction: column;
+
+  gap: 9px;
+}
+
+.ai-copilot-suggestions button {
+  width: 100%;
+
+  padding: 11px 13px;
+
+  border: 1px solid #e8e3ff;
+  border-radius: 11px;
+
+  background: #ffffff;
+
+  color: #625d70;
+
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 600;
+
+  line-height: 1.4;
+  text-align: left;
+
+  cursor: pointer;
+
+  transition:
+    background 0.18s ease,
+    color 0.18s ease,
+    border-color 0.18s ease,
+    transform 0.18s ease;
+}
+
+.ai-copilot-suggestions button:hover {
+  color: #6546ee;
+  background: #f8f6ff;
+  border-color: #d9d0ff;
+
+  transform: translateX(2px);
+}
+
+
+/* ---------- Conversation ---------- */
+
+.ai-copilot-messages {
+  display: flex;
+  flex-direction: column;
+
+  gap: 13px;
+
+  width: 100%;
+}
+
+
+/* ---------- Base Message ---------- */
+
+.ai-copilot-message {
+  width: fit-content;
+  max-width: 86%;
+
+  padding: 11px 13px;
+
+  border-radius: 14px;
+
+  font-size: 13px;
+  line-height: 1.55;
+
+  overflow-wrap: anywhere;
+  white-space: pre-wrap;
+}
+
+
+/* ---------- User Message ---------- */
+
+.ai-copilot-message.user-message {
+  align-self: flex-end;
+
+  color: #ffffff;
+
+  background: linear-gradient(
+    135deg,
+    #6d4aff 0%,
+    #7c54f5 100%
+  );
+
+  border-bottom-right-radius: 5px;
+
+  box-shadow: 0 5px 14px rgba(109, 74, 255, 0.15);
+}
+
+
+/* ---------- Assistant Message ---------- */
+
+.ai-copilot-message.assistant-message {
+  align-self: flex-start;
+
+  color: #4c4758;
+  background: #f7f6fb;
+
+  border: 1px solid #ebe9f2;
+  border-bottom-left-radius: 5px;
+}
+
+
+/* ---------- Input Form ---------- */
+
+.ai-copilot-form {
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+
+  gap: 9px;
+
+  padding: 14px 16px 16px;
+
+  background: #ffffff;
+
+  border-top: 1px solid #efedf5;
+}
+
+.ai-copilot-form input {
+  flex: 1;
+  min-width: 0;
+
+  height: 44px;
+
+  padding: 0 14px;
+
+  border: 1px solid #dfdbe9;
+  border-radius: 12px;
+
+  outline: none;
+
+  background: #fbfaff;
+
+  color: #292535;
+
+  font-family: inherit;
+  font-size: 13px;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+.ai-copilot-form input::placeholder {
+  color: #aaa5b5;
+}
+
+.ai-copilot-form input:focus {
+  background: #ffffff;
+  border-color: #8065f4;
+
+  box-shadow: 0 0 0 3px rgba(109, 74, 255, 0.09);
+}
+
+.ai-copilot-form input:disabled {
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+
+/* ---------- Send Button ---------- */
+
+.ai-copilot-form button {
+  flex-shrink: 0;
+
+  height: 44px;
+  min-width: 64px;
+
+  padding: 0 15px;
+
+  border: none;
+  border-radius: 12px;
+
+  background: #6d4aff;
+
+  color: #ffffff;
+
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.ai-copilot-form button:hover:not(:disabled) {
+  background: #5e3ee8;
+
+  transform: translateY(-1px);
+
+  box-shadow: 0 6px 15px rgba(109, 74, 255, 0.22);
+}
+
+.ai-copilot-form button:disabled {
+  cursor: not-allowed;
+
+  background: #c9c1ed;
+
+  box-shadow: none;
+}
+
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 600px) {
+  .ai-copilot-trigger {
+    right: 16px;
+    bottom: 16px;
+
+    width: 54px;
+    height: 54px;
+
+    border-radius: 16px;
+  }
+
+  .ai-copilot {
+    right: 12px;
+    bottom: 12px;
+
+    width: calc(100vw - 24px);
+    height: min(620px, calc(100vh - 24px));
+    max-height: calc(100vh - 24px);
+
+    border-radius: 20px;
+  }
+
+  .ai-copilot-header {
+    padding: 18px;
+  }
+
+  .ai-copilot-body {
+    padding: 16px;
+  }
+
+  .ai-copilot-form {
+    padding: 12px;
+  }
+
+  .ai-copilot-message {
+    max-width: 90%;
+  }
+}
+
+
+/* ---------- Very Small Screens ---------- */
+
+@media (max-width: 380px) {
+  .ai-copilot {
+    right: 8px;
+    bottom: 8px;
+
+    width: calc(100vw - 16px);
+    height: calc(100vh - 16px);
+
+    border-radius: 17px;
+  }
+
+  .ai-copilot-header h3 {
+    font-size: 16px;
+  }
+
+  .ai-copilot-form button {
+    min-width: 56px;
+    padding: 0 12px;
+  }
+}

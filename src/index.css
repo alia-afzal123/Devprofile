@@ -1,0 +1,36 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  margin: 0;
+
+  background: var(--page-bg);
+  color: var(--text-primary);
+
+  font-family: "Inter", "Segoe UI", Arial, sans-serif;
+
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+#root {
+  width: 100%;
+  min-width: 0;
+
+  min-height: 100svh;
+
+  display: flex;
+  flex-direction: column;
+}

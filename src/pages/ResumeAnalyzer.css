@@ -1,0 +1,1372 @@
+.resume-page {
+  width: 100%;
+  min-height: calc(100svh - 90px);
+  display: flex;
+  flex-direction: column;
+  background: #f8f9ff;
+}
+
+.resume-page-content {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 42px 32px 90px;
+}
+
+.resume-hero {
+  max-width: 900px;
+  margin-bottom: 40px;
+}
+
+.resume-eyebrow {
+  display: block;
+  margin-bottom: 16px;
+  color: var(--accent);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+}
+
+.resume-hero h1 {
+  max-width: 880px;
+  margin: 0;
+  color: var(--text-primary);
+  font-size: clamp(40px, 4.4vw, 62px);
+  font-weight: 600;
+  line-height: 1.03;
+  letter-spacing: -0.05em;
+}
+
+.resume-hero h1 span {
+  display: block;
+  color: var(--accent);
+}
+
+.resume-hero p {
+  max-width: 700px;
+  margin: 20px 0 0;
+  color: var(--text-secondary);
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+/* ==================================
+   Main analyzer
+================================== */
+
+.resume-analyzer-shell {
+  height: 700px;
+  min-height: 700px;
+  padding: 28px;
+
+  display: grid;
+  grid-template-columns: minmax(0, 1.9fr) minmax(330px, 0.85fr);
+  gap: 30px;
+
+  overflow: hidden;
+
+  background: var(--surface-solid);
+  border: 1px solid var(--border);
+  border-radius: 28px;
+  box-shadow: 0 20px 55px rgba(39, 25, 74, 0.05);
+}
+
+/* ==================================
+   Upload workspace
+================================== */
+
+.resume-upload-panel {
+  min-width: 0;
+  min-height: 0;
+  height: 100%;
+  overflow: hidden;
+}
+
+.resume-upload-zone {
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  padding: 50px 32px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+
+  text-align: center;
+  border: 2px dashed #dfe3f3;
+  border-radius: 22px;
+}
+
+.resume-document-visual {
+  position: relative;
+  width: 115px;
+  height: 130px;
+  flex: 0 0 auto;
+  margin-bottom: 28px;
+}
+
+.resume-document-back {
+  position: absolute;
+  top: 12px;
+  left: 28px;
+  width: 82px;
+  height: 106px;
+  background: #eee8ff;
+  border: 1px solid #ddd2fb;
+  border-radius: 18px;
+  transform: rotate(7deg);
+}
+
+.resume-document-front {
+  position: absolute;
+  top: 0;
+  left: 8px;
+  width: 88px;
+  height: 112px;
+  padding: 8px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+
+  background: #fff;
+  border: 1px solid #e6e3f1;
+  border-radius: 17px;
+  box-shadow: 0 15px 30px rgba(67, 47, 108, 0.1);
+}
+
+.resume-document-image {
+  width: 200%;
+  height: 100%;
+  display: block;
+  object-fit: contain;
+}
+
+.uploaded-resume-image {
+  width: 130px;
+  height: 130px;
+  object-fit: contain;
+}
+
+.resume-upload-label {
+  margin-bottom: 12px;
+  color: var(--accent);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+}
+
+.resume-upload-zone h2,
+.resume-file-selected h2 {
+  margin: 0;
+  color: var(--text-primary);
+  font-size: 28px;
+  font-weight: 600;
+  letter-spacing: -0.035em;
+}
+
+.resume-upload-zone > p,
+.resume-file-selected > p {
+  margin: 8px 0 28px;
+  color: var(--text-secondary);
+  font-size: 14px;
+}
+
+.resume-upload-button {
+  min-width: 205px;
+  height: 52px;
+  padding: 0 22px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  color: #fff;
+  background: linear-gradient(135deg, #6d28d9, #7c2be8);
+  border-radius: 12px;
+  box-shadow: 0 12px 28px rgba(109, 40, 217, 0.24);
+
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.resume-upload-button input {
+  display: none;
+}
+
+.resume-upload-symbol {
+  font-size: 18px;
+}
+
+.resume-upload-zone small {
+  margin-top: 22px;
+  color: #8792ad;
+  font-size: 11px;
+}
+
+/* ==================================
+   Selected resume
+================================== */
+
+.resume-file-selected {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+}
+
+.resume-file-selected .resume-document-visual {
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 26px;
+}
+
+.resume-selected-actions {
+  margin-top: 4px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 11px;
+}
+
+.resume-file-selected .resume-analyze-button {
+  min-width: 190px;
+  min-height: 48px;
+  margin: 0;
+  padding: 0 22px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+
+  color: #fff;
+  background: linear-gradient(135deg, #6d28d9, #7c2be8);
+
+  border: 0;
+  border-radius: 11px;
+
+  box-shadow: 0 11px 25px rgba(109, 40, 217, 0.2);
+
+  font-size: 12px;
+  font-weight: 650;
+  cursor: pointer;
+}
+
+.resume-file-selected .resume-analyze-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 14px 30px rgba(109, 40, 217, 0.25);
+}
+
+.resume-file-selected .resume-analyze-button:disabled {
+  opacity: 0.7;
+  cursor: wait;
+  transform: none;
+}
+
+.resume-change-link {
+  padding: 2px 5px;
+
+  color: #7c6c99;
+  background: transparent;
+
+  border: 0;
+
+  font: inherit;
+  font-size: 10px;
+  font-weight: 500;
+
+  cursor: pointer;
+}
+
+.resume-change-link:hover {
+  color: var(--accent);
+  text-decoration: underline;
+}
+
+/* ==================================
+   Resume Intelligence panel
+================================== */
+
+.resume-analysis-panel {
+  min-width: 0;
+  min-height: 0;
+  height: 100%;
+
+  padding: 0;
+
+  display: block;
+
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(124, 58, 237, 0.055),
+      rgba(255, 255, 255, 0.7)
+    );
+
+  border: 1px solid #e2dcf6;
+  border-radius: 19px;
+
+  scrollbar-width: thin;
+  scrollbar-color: #b99af7 transparent;
+}
+
+.resume-analysis-panel::-webkit-scrollbar {
+  width: 7px;
+}
+
+.resume-analysis-panel::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.resume-analysis-panel::-webkit-scrollbar-thumb {
+  background: #b99af7;
+  border-radius: 999px;
+}
+
+.resume-analysis-panel::-webkit-scrollbar-thumb:hover {
+  background: #9f7bea;
+}
+
+/* ==================================
+   Empty result state
+================================== */
+
+.resume-empty-report {
+  width: 100%;
+  min-height: 100%;
+  padding: 34px 30px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+
+  box-sizing: border-box;
+}
+
+.resume-empty-mark {
+  width: 46px;
+  height: 46px;
+  margin-bottom: 24px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #fff;
+  border: 1px solid #e4dcf8;
+  border-radius: 13px;
+
+  box-shadow: 0 8px 22px rgba(67, 47, 108, 0.06);
+}
+
+.resume-empty-mark span {
+  color: var(--accent);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+}
+
+.resume-result-eyebrow {
+  display: block;
+  margin-bottom: 10px;
+
+  color: var(--accent);
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.13em;
+}
+
+.resume-empty-report h2 {
+  max-width: 270px;
+  margin: 0;
+
+  color: var(--text-primary);
+  font-size: 20px;
+  font-weight: 650;
+  line-height: 1.3;
+  letter-spacing: -0.03em;
+}
+
+.resume-empty-report p {
+  max-width: 285px;
+  margin: 11px 0 0;
+
+  color: var(--text-secondary);
+  font-size: 11px;
+  line-height: 1.65;
+}
+
+.resume-empty-lines {
+  width: 100%;
+  margin-top: 30px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.resume-empty-lines span {
+  display: block;
+  height: 7px;
+
+  background: rgba(124, 58, 237, 0.07);
+  border-radius: 20px;
+}
+
+.resume-empty-lines span:nth-child(1) {
+  width: 82%;
+}
+
+.resume-empty-lines span:nth-child(2) {
+  width: 64%;
+}
+
+.resume-empty-lines span:nth-child(3) {
+  width: 45%;
+}
+
+/* ==================================
+   Real AI result
+================================== */
+
+.resume-result-report {
+  width: 100%;
+  min-height: 100%;
+  padding: 28px 26px 32px;
+  box-sizing: border-box;
+}
+
+.resume-result-score {
+  width: fit-content;
+  margin: 0 0 18px auto;
+  padding: 11px 14px;
+
+  display: flex;
+  align-items: baseline;
+  gap: 3px;
+
+  color: var(--accent);
+  background: #fff;
+
+  border: 1px solid #e4dcf8;
+  border-radius: 13px;
+
+  box-shadow: 0 8px 20px rgba(67, 47, 108, 0.05);
+}
+
+.resume-result-score span {
+  font-size: 28px;
+  font-weight: 750;
+  line-height: 1;
+}
+
+.resume-result-score small {
+  color: #858095;
+  font-size: 9px;
+  font-weight: 600;
+}
+
+.resume-result-report > h2 {
+  margin: 0 0 20px;
+
+  color: var(--text-primary);
+  font-size: 21px;
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: -0.025em;
+}
+
+/* Score rows */
+
+.resume-score-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 18px;
+}
+
+.resume-score-list > div {
+  min-height: 54px;
+  padding: 0 14px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+
+  background: rgba(255, 255, 255, 0.82);
+
+  border: 1px solid #e8e2f5;
+  border-radius: 12px;
+}
+
+.resume-score-list span {
+  color: var(--text-primary);
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.resume-score-list strong {
+  flex: 0 0 auto;
+  color: var(--accent);
+  font-size: 13px;
+  font-weight: 750;
+}
+
+/* Result sections */
+
+.resume-result-section {
+  margin-top: 14px;
+  padding: 17px 16px;
+
+  background: rgba(255, 255, 255, 0.8);
+
+  border: 1px solid #e8e2f5;
+  border-radius: 14px;
+}
+
+.resume-result-section h3 {
+  margin: 0 0 12px;
+
+  color: var(--text-primary);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.resume-result-section p {
+  margin: 8px 0;
+
+  color: var(--text-secondary);
+  font-size: 10.5px;
+  line-height: 1.55;
+}
+
+.resume-result-section p:last-child {
+  margin-bottom: 0;
+}
+
+.resume-result-section strong {
+  color: var(--text-primary);
+  font-weight: 650;
+}
+
+/* ==================================
+   Dark theme
+================================== */
+
+body.dark-theme .resume-page {
+  background: var(--page-bg);
+}
+
+body.dark-theme .resume-upload-zone,
+body.dark-theme .resume-analysis-panel {
+  border-color: var(--border);
+}
+
+body.dark-theme .resume-analysis-panel {
+  background: var(--surface);
+}
+
+body.dark-theme .resume-document-front {
+  background: var(--surface-solid);
+}
+
+body.dark-theme .resume-result-score,
+body.dark-theme .resume-score-list > div,
+body.dark-theme .resume-result-section {
+  background: var(--surface-solid);
+  border-color: var(--border);
+}
+
+/* ==================================
+   Footer
+================================== */
+
+.resume-page-footer {
+  min-height: 90px;
+  margin-top: auto;
+  padding: 0 32px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+
+  background: #eef2ff;
+}
+
+.resume-footer-brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.resume-footer-brand strong {
+  color: var(--text-primary);
+  font-size: 13px;
+}
+
+.resume-footer-brand span,
+.resume-page-footer nav span {
+  color: #4e5360;
+  font-size: 11px;
+}
+
+.resume-page-footer nav {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+body.dark-theme .resume-page-footer {
+  background: var(--surface);
+}
+
+/* ==================================
+   Tablet
+================================== */
+
+@media (max-width: 1000px) {
+  .resume-analyzer-shell {
+    height: auto;
+    min-height: 0;
+
+    grid-template-columns: 1fr;
+
+    overflow: visible;
+  }
+
+  .resume-upload-panel {
+    height: auto;
+    overflow: visible;
+  }
+
+  .resume-upload-zone {
+    height: auto;
+    min-height: 540px;
+  }
+
+  .resume-analysis-panel {
+    height: 600px;
+    min-height: 600px;
+    max-height: 600px;
+
+    overflow-y: auto;
+  }
+}
+
+/* ==================================
+   Mobile
+================================== */
+
+@media (max-width: 600px) {
+  .resume-page-content {
+    padding: 26px 12px 55px;
+  }
+
+  .resume-hero {
+    margin-bottom: 26px;
+  }
+
+  .resume-hero h1 {
+    font-size: 38px;
+  }
+
+  .resume-analyzer-shell {
+    height: auto;
+    min-height: 0;
+
+    padding: 12px;
+    gap: 14px;
+
+    overflow: visible;
+
+    border-radius: 20px;
+  }
+
+  .resume-upload-zone {
+    min-height: 500px;
+    padding: 32px 18px;
+  }
+
+  .resume-analysis-panel {
+    height: 520px;
+    min-height: 520px;
+    max-height: 520px;
+
+    padding: 0;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+
+  .resume-empty-report {
+    padding: 26px 20px;
+  }
+
+  .resume-result-report {
+    padding: 22px 18px 26px;
+  }
+
+  .resume-result-report > h2 {
+    font-size: 19px;
+  }
+
+  .resume-selected-actions {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .resume-file-selected .resume-analyze-button {
+    width: 100%;
+  }
+
+  .resume-page-footer {
+    padding: 24px 18px;
+
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .resume-footer-brand {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .resume-page-footer nav {
+    flex-wrap: wrap;
+    gap: 12px 20px;
+  }
+}
+/* =====================================================
+   RESUME AI COPILOT
+   Same UI language as GitHub Analyzer Copilot
+===================================================== */
+
+.github-style-copilot {
+  margin-top: 18px;
+  padding: 17px 18px 15px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(246, 238, 255, 0.96),
+      rgba(241, 231, 255, 0.78)
+    );
+
+  border: 1px solid #ddc9fb;
+  border-radius: 16px;
+
+  box-shadow:
+    0 8px 24px rgba(112, 40, 228, 0.04);
+}
+
+
+/* ==============================
+   TOP
+============================== */
+
+.resume-copilot-topline {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+
+  margin-bottom: 5px;
+}
+
+
+.resume-copilot-label {
+  color: #6f25df;
+
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+
+  text-transform: uppercase;
+}
+
+
+.resume-copilot-context {
+  color: #00a83b;
+
+  font-size: 7px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+
+  text-transform: uppercase;
+}
+
+
+/* ==============================
+   TITLE
+============================== */
+
+.resume-copilot-title {
+  margin: 0;
+
+  color: #211a29;
+
+  font-size: 13px;
+  font-weight: 750;
+  line-height: 1.3;
+}
+
+
+/* ==============================
+   QUICK PROMPTS
+============================== */
+
+.resume-copilot-quick-prompts {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 7px;
+
+  margin-top: 14px;
+}
+
+
+.resume-copilot-quick-prompts button {
+  padding: 7px 11px;
+
+  color: #6f25df;
+  background: rgba(255, 255, 255, 0.88);
+
+  border: 1px solid #e5d6fa;
+  border-radius: 999px;
+
+  font-family: inherit;
+  font-size: 8px;
+  font-weight: 500;
+
+  white-space: nowrap;
+
+  cursor: pointer;
+
+  transition:
+    border-color 0.2s ease,
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+
+.resume-copilot-quick-prompts button:hover {
+  background: #fff;
+  border-color: #b994ed;
+
+  transform: translateY(-1px);
+}
+
+
+/* ==============================
+   CHAT
+============================== */
+
+.resume-copilot-chat {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  max-height: 260px;
+
+  margin-top: 14px;
+  padding: 10px 5px 4px 0;
+
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  border-top: 1px solid rgba(119, 68, 190, 0.1);
+
+  scrollbar-width: thin;
+  scrollbar-color: #ae83e9 transparent;
+}
+
+
+.resume-copilot-chat::-webkit-scrollbar {
+  width: 4px;
+}
+
+
+.resume-copilot-chat::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+
+.resume-copilot-chat::-webkit-scrollbar-thumb {
+  background: #ae83e9;
+  border-radius: 999px;
+}
+
+
+/* ==============================
+   MESSAGE BUBBLES
+============================== */
+
+.resume-copilot-bubble {
+  width: fit-content;
+  max-width: 88%;
+
+  padding: 9px 11px;
+
+  border-radius: 11px;
+}
+
+
+.resume-copilot-user {
+  align-self: flex-end;
+
+  color: #fff;
+
+  background:
+    linear-gradient(
+      135deg,
+      #7028e4,
+      #8434eb
+    );
+
+  border-bottom-right-radius: 4px;
+}
+
+
+.resume-copilot-ai {
+  align-self: flex-start;
+
+  color: #302738;
+  background: rgba(255, 255, 255, 0.94);
+
+  border: 1px solid #e4d6f6;
+  border-bottom-left-radius: 4px;
+}
+
+
+.resume-copilot-role {
+  display: block;
+
+  margin-bottom: 4px;
+
+  font-size: 6.5px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+
+  opacity: 0.72;
+}
+
+
+.resume-copilot-ai .resume-copilot-role {
+  color: #7028e4;
+  opacity: 1;
+}
+
+
+.resume-copilot-bubble p {
+  margin: 0;
+
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+
+  font-size: 9px;
+  line-height: 1.55;
+}
+
+
+/* ==============================
+   THINKING DOTS
+============================== */
+
+.resume-copilot-dots {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+
+  min-height: 14px;
+}
+
+
+.resume-copilot-dots span {
+  width: 4px;
+  height: 4px;
+
+  background: #7b36df;
+
+  border-radius: 50%;
+
+  animation:
+    resumeCopilotDot 1s
+    infinite ease-in-out;
+}
+
+
+.resume-copilot-dots span:nth-child(2) {
+  animation-delay: 0.14s;
+}
+
+
+.resume-copilot-dots span:nth-child(3) {
+  animation-delay: 0.28s;
+}
+
+
+@keyframes resumeCopilotDot {
+  0%,
+  100% {
+    opacity: 0.3;
+    transform: translateY(0);
+  }
+
+  50% {
+    opacity: 1;
+    transform: translateY(-2px);
+  }
+}
+
+
+/* ==============================
+   INPUT + BUTTON
+============================== */
+
+.resume-copilot-input-row {
+  display: flex;
+  align-items: stretch;
+  gap: 8px;
+
+  width: 100%;
+
+  margin-top: 13px;
+}
+
+
+.resume-copilot-input-row input {
+  flex: 1;
+  min-width: 0;
+
+  height: 39px;
+
+  padding: 0 13px;
+
+  color: #28202f;
+  background: rgba(255, 255, 255, 0.96);
+
+  border: 1px solid #7028e4;
+  border-radius: 10px;
+
+  outline: none;
+
+  font-family: inherit;
+  font-size: 9px;
+
+  transition:
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
+}
+
+
+.resume-copilot-input-row input::placeholder {
+  color: #9991a2;
+}
+
+
+.resume-copilot-input-row input:focus {
+  border-color: #7028e4;
+
+  box-shadow:
+    0 0 0 3px
+    rgba(112, 40, 228, 0.07);
+}
+
+
+.resume-copilot-input-row button {
+  flex-shrink: 0;
+
+  min-width: 94px;
+  height: 39px;
+
+  padding: 0 13px;
+
+  color: #fff;
+
+  background:
+    linear-gradient(
+      135deg,
+      #a56eea,
+      #9d68e6
+    );
+
+  border: 0;
+  border-radius: 10px;
+
+  font-family: inherit;
+  font-size: 8px;
+  font-weight: 700;
+
+  white-space: nowrap;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    opacity 0.2s ease;
+}
+
+
+.resume-copilot-input-row button:hover:not(:disabled) {
+  transform: translateY(-1px);
+
+  box-shadow:
+    0 7px 15px
+    rgba(112, 40, 228, 0.16);
+}
+
+
+.resume-copilot-input-row button:disabled {
+  opacity: 0.48;
+  cursor: not-allowed;
+
+  box-shadow: none;
+}
+
+
+/* ==============================
+   SMALL CONTEXT NOTE
+============================== */
+
+.resume-copilot-note {
+  margin: 8px 0 0;
+
+  color: #958b9f;
+
+  font-size: 7px;
+  line-height: 1.4;
+}
+
+
+/* ==============================
+   ERROR
+============================== */
+
+.resume-copilot-error {
+  margin: 10px 0 0;
+  padding: 8px 10px;
+
+  color: #b42318;
+  background: #fff1f1;
+
+  border: 1px solid #ffd4d0;
+  border-radius: 8px;
+
+  font-size: 8px;
+  line-height: 1.45;
+}
+
+
+/* ==============================
+   MOBILE
+============================== */
+
+@media (max-width: 700px) {
+  .github-style-copilot {
+    padding: 15px;
+  }
+
+  .resume-copilot-quick-prompts {
+    gap: 6px;
+  }
+
+  .resume-copilot-quick-prompts button {
+    font-size: 7.5px;
+  }
+
+  .resume-copilot-input-row {
+    flex-direction: column;
+  }
+
+  .resume-copilot-input-row button {
+    width: 100%;
+  }
+
+  .resume-copilot-bubble {
+    max-width: 94%;
+  }
+}
+/* ==================================================
+   FINAL RESUME ANALYZER WIDTH + COPILOT ALIGNMENT
+   Match GitHub analyzer proportions
+================================================== */
+
+.resume-analyzer-shell {
+  grid-template-columns:
+    minmax(0, 1.15fr)
+    minmax(500px, 0.85fr);
+}
+
+.resume-analysis-panel {
+  min-width: 0;
+}
+
+
+/* Copilot prompts stay in one row */
+
+.resume-copilot-quick-prompts {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 7px;
+  width: 100%;
+}
+
+.resume-copilot-quick-prompts button {
+  width: 100%;
+  min-width: 0;
+  padding: 7px 6px;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+  text-align: center;
+}
+
+
+/* Input gets most space, button stays compact */
+
+.resume-copilot-input-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 8px;
+  width: 100%;
+}
+
+.resume-copilot-input-row input {
+  width: 100%;
+  min-width: 0;
+}
+
+.resume-copilot-input-row button {
+  min-width: 112px;
+}
+
+
+/* Keep normal responsive behavior */
+
+@media (max-width: 1100px) {
+  .resume-analyzer-shell {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .resume-copilot-quick-prompts {
+    grid-template-columns: 1fr;
+  }
+
+  .resume-copilot-input-row {
+    grid-template-columns: 1fr;
+  }
+
+  .resume-copilot-input-row button {
+    width: 100%;
+  }
+}
+/* ==================================================
+   RESUME COPILOT — MARKDOWN RESPONSE
+================================================== */
+
+.resume-copilot-answer {
+  color: #4f4757;
+  font-size: 10px;
+  line-height: 1.65;
+}
+
+.resume-copilot-answer p {
+  margin: 0 0 8px;
+}
+
+.resume-copilot-answer p:last-child {
+  margin-bottom: 0;
+}
+
+.resume-copilot-answer strong {
+  color: #241d2b;
+  font-weight: 750;
+}
+
+.resume-copilot-answer ul,
+.resume-copilot-answer ol {
+  margin: 7px 0 9px;
+  padding-left: 18px;
+}
+
+.resume-copilot-answer li {
+  margin-bottom: 6px;
+  padding-left: 2px;
+}
+
+.resume-copilot-answer li:last-child {
+  margin-bottom: 0;
+}
+
+.resume-copilot-answer h1,
+.resume-copilot-answer h2,
+.resume-copilot-answer h3,
+.resume-copilot-answer h4 {
+  margin: 10px 0 6px;
+  color: #241d2b;
+  font-size: 11px;
+  font-weight: 750;
+  line-height: 1.4;
+}
+
+.resume-copilot-answer code {
+  padding: 2px 4px;
+  background: #f1e9fc;
+  border-radius: 4px;
+  color: #6522ca;
+  font-family: inherit;
+  font-size: 9px;
+}
+/* =========================================
+   RESUME COPILOT — USER MESSAGE VISIBILITY
+========================================= */
+
+.resume-copilot-user {
+  color: #ffffff !important;
+  background: linear-gradient(
+    135deg,
+    #7028e4,
+    #812bea
+  );
+}
+
+.resume-copilot-user .resume-copilot-role {
+  color: #ffffff !important;
+  opacity: 0.8;
+}
+
+.resume-copilot-user p,
+.resume-copilot-user .resume-copilot-answer,
+.resume-copilot-user .resume-copilot-answer p {
+  color: #ffffff !important;
+}
+
+.resume-copilot-user strong {
+  color: #ffffff !important;
+}

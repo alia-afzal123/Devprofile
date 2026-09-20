@@ -1,0 +1,1433 @@
+
+.login-page {
+  width: 100%;
+  min-height: 100svh;
+  padding: 32px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: var(--text-primary);
+
+  background:
+    radial-gradient(
+      circle at 8% 10%,
+      var(--accent-soft),
+      transparent 30%
+    ),
+    var(--page-bg);
+}
+
+
+/* =========================
+   Main Shell
+========================= */
+
+.login-shell {
+  width: min(100%, 1240px);
+  min-height: 720px;
+
+  display: grid;
+  grid-template-columns: minmax(0, 45%) minmax(0, 55%);
+
+  overflow: hidden;
+  position: relative;
+  background: var(--surface-solid);
+  border: 1px solid var(--border);
+  border-radius: 30px;
+
+  box-shadow: 0 24px 64px rgba(30, 20, 55, 0.1);
+}
+
+.login-theme-toggle {
+  position: absolute;
+  top: 22px;
+  right: 22px;
+
+  z-index: 20;
+}
+/* =========================================================
+   Left Panel
+========================================================= */
+
+.login-visual-panel {
+  position: relative;
+  min-width: 0;
+
+  padding: 42px clamp(34px, 4vw, 58px);
+
+  display: flex;
+  flex-direction: column;
+
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      145deg,
+      var(--accent-soft),
+      rgba(255, 255, 255, 0.08)
+    );
+
+  border-right: 1px solid var(--border);
+}
+
+
+/* Brand */
+
+.login-brand {
+  position: relative;
+  z-index: 5;
+
+  width: fit-content;
+
+  color: var(--accent);
+  text-decoration: none;
+
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: -0.035em;
+}
+
+.login-brand span {
+  color: var(--text-primary);
+}
+
+
+/* =========================================================
+   Product Showcase
+========================================================= */
+
+.profile-showcase {
+  position: relative;
+
+  width: min(100%, 450px);
+  height: 390px;
+
+  margin: 42px auto 28px;
+}
+
+
+/* Shared floating-card styling */
+
+.showcase-resume,
+.showcase-github,
+.showcase-portfolio {
+  position: absolute;
+
+  background: var(--surface-solid);
+  border: 1px solid var(--border);
+
+  box-shadow: 0 18px 44px rgba(42, 23, 70, 0.1);
+
+  transition:
+    transform 0.28s ease,
+    box-shadow 0.28s ease,
+    border-color 0.28s ease;
+}
+
+.showcase-resume:hover,
+.showcase-github:hover,
+.showcase-portfolio:hover {
+  box-shadow: 0 25px 56px rgba(42, 23, 70, 0.15);
+}
+
+
+/* =========================
+   Resume Mockup
+========================= */
+
+.showcase-resume {
+  top: 42px;
+  left: 18px;
+
+  width: 205px;
+  height: 265px;
+  padding: 22px 20px;
+
+  border-radius: 20px;
+
+  transform: rotate(-2deg);
+
+  z-index: 2;
+}
+
+.showcase-resume:hover {
+  transform: rotate(-1deg) translateY(-4px);
+}
+
+
+/* Resume header */
+
+.resume-top {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+
+  padding-bottom: 16px;
+
+  border-bottom: 1px solid var(--border);
+}
+
+.resume-avatar {
+  width: 38px;
+  height: 38px;
+
+  flex-shrink: 0;
+
+  border-radius: 10px;
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--accent),
+      var(--accent-hover)
+    );
+}
+
+.resume-name {
+  flex: 1;
+
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.resume-name span,
+.resume-name small {
+  display: block;
+
+  border-radius: 999px;
+}
+
+.resume-name span {
+  width: 82%;
+  height: 7px;
+
+  background: var(--text-primary);
+}
+
+.resume-name small {
+  width: 55%;
+  height: 5px;
+
+  background: var(--text-muted);
+  opacity: 0.45;
+}
+
+
+/* Resume sections */
+
+.resume-section {
+  margin-top: 18px;
+}
+
+.resume-section strong {
+  display: block;
+  margin-bottom: 9px;
+
+  color: var(--accent);
+
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+.resume-section > span {
+  width: 100%;
+  height: 5px;
+
+  display: block;
+  margin-top: 6px;
+
+  border-radius: 999px;
+
+  background: var(--text-muted);
+  opacity: 0.24;
+}
+
+.resume-section .short-line {
+  width: 68%;
+}
+
+
+/* Resume skill tags */
+
+.resume-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.resume-tags i {
+  padding: 5px 7px;
+
+  color: var(--accent);
+  background: var(--accent-soft);
+
+  border-radius: 6px;
+
+  font-size: 8px;
+  font-style: normal;
+  font-weight: 600;
+}
+
+
+/* Resume label */
+
+.resume-status {
+  position: absolute;
+  left: 18px;
+  bottom: 16px;
+
+  display: flex;
+  align-items: center;
+  gap: 7px;
+
+  color: var(--text-secondary);
+
+  font-size: 9px;
+  font-weight: 600;
+}
+
+.resume-status img {
+  width: 17px;
+  height: 17px;
+
+  display: block;
+  object-fit: contain;
+
+  border-radius: 4px;
+}
+
+
+/* =========================
+   GitHub Card
+========================= */
+
+.showcase-github {
+  top: 82px;
+  right: 0;
+
+  width: 190px;
+  padding: 16px;
+
+  border-radius: 18px;
+
+  z-index: 4;
+}
+
+.showcase-github:hover {
+  transform: translateY(-5px);
+}
+
+.github-card-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.showcase-icon {
+  width: 38px;
+  height: 38px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: var(--accent-soft);
+  border: 1px solid var(--border);
+  border-radius: 11px;
+}
+
+.showcase-icon img {
+  width: 24px;
+  height: 24px;
+
+  display: block;
+  object-fit: contain;
+}
+
+.github-card-head > div:last-child {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.github-card-head strong {
+  color: var(--text-primary);
+
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.github-card-head span {
+  color: var(--text-muted);
+
+  font-size: 9px;
+}
+
+
+/* Repository stats */
+
+.repo-stat {
+  margin-top: 18px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  color: var(--text-secondary);
+
+  font-size: 9px;
+}
+
+.repo-stat strong {
+  color: var(--accent);
+
+  font-size: 15px;
+  font-weight: 700;
+}
+
+
+/* Contribution blocks */
+
+.github-activity {
+  margin-top: 11px;
+
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 4px;
+}
+
+.github-activity i {
+  display: block;
+  aspect-ratio: 1;
+
+  background: var(--accent-soft);
+
+  border-radius: 3px;
+}
+
+.github-activity i:nth-child(2),
+.github-activity i:nth-child(5),
+.github-activity i:nth-child(7),
+.github-activity i:nth-child(10),
+.github-activity i:nth-child(12) {
+  background: var(--accent);
+  opacity: 0.78;
+}
+
+
+/* =========================
+   Portfolio Browser
+========================= */
+
+.showcase-portfolio {
+  left: 78px;
+  bottom: 0;
+
+  width: 210px;
+
+  overflow: hidden;
+
+  border-radius: 17px;
+
+  z-index: 3;
+}
+
+.showcase-portfolio:hover {
+  transform: translateY(-4px);
+}
+
+
+/* Browser bar */
+
+.portfolio-browser-bar {
+  height: 30px;
+  padding: 0 10px;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  background: var(--accent-soft);
+
+  border-bottom: 1px solid var(--border);
+}
+
+.portfolio-browser-bar > div {
+  display: flex;
+  gap: 4px;
+}
+
+.portfolio-browser-bar i {
+  width: 5px;
+  height: 5px;
+
+  display: block;
+
+  background: var(--text-muted);
+
+  border-radius: 50%;
+
+  opacity: 0.6;
+}
+
+.portfolio-browser-bar span {
+  color: var(--text-muted);
+
+  font-size: 7px;
+}
+
+
+/* Project rows */
+
+.portfolio-project {
+  padding: 11px;
+
+  display: flex;
+  align-items: center;
+  gap: 9px;
+
+  border-bottom: 1px solid var(--border);
+}
+
+.portfolio-project:last-child {
+  border-bottom: 0;
+}
+
+.portfolio-thumbnail,
+.project-placeholder {
+  width: 36px;
+  height: 36px;
+
+  flex-shrink: 0;
+
+  border-radius: 9px;
+}
+
+.portfolio-thumbnail {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: var(--accent-soft);
+}
+
+.portfolio-thumbnail img {
+  width: 23px;
+  height: 23px;
+
+  object-fit: contain;
+}
+
+.project-placeholder {
+  background:
+    linear-gradient(
+      135deg,
+      var(--accent-soft),
+      var(--accent-medium)
+    );
+}
+
+.portfolio-project > div:last-child {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.portfolio-project strong {
+  color: var(--text-primary);
+
+  font-size: 9px;
+  font-weight: 600;
+}
+
+.portfolio-project span {
+  color: var(--text-muted);
+
+  font-size: 7px;
+}
+
+
+/* =========================================================
+   Left Copy
+========================================================= */
+
+.login-visual-copy {
+  max-width: 420px;
+  margin-top: auto;
+}
+
+.login-visual-copy h2 {
+  margin: 0;
+
+  color: var(--text-primary);
+
+  font-size: clamp(26px, 2.35vw, 34px);
+  font-weight: 700;
+  line-height: 1.18;
+
+  letter-spacing: -0.035em;
+}
+
+.login-visual-copy p {
+  max-width: 405px;
+
+  margin: 15px 0 0;
+
+  color: var(--text-secondary);
+
+  font-size: 15px;
+  line-height: 1.65;
+}
+
+.visual-dots {
+  margin-top: 25px;
+
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.visual-dots span {
+  width: 6px;
+  height: 6px;
+
+  display: block;
+
+  background: var(--text-muted);
+
+  border-radius: 50%;
+
+  opacity: 0.28;
+}
+
+.visual-dots span.active {
+  width: 18px;
+
+  background: var(--accent);
+
+  border-radius: 999px;
+
+  opacity: 1;
+}
+
+
+/* =========================================================
+   Right Form Panel
+========================================================= */
+
+.login-form-panel {
+  min-width: 0;
+
+  padding:
+    56px
+    clamp(46px, 6vw, 92px)
+    34px;
+
+  display: flex;
+  flex-direction: column;
+
+  background: var(--surface-solid);
+}
+
+.login-form-wrapper {
+  width: min(100%, 440px);
+  margin: auto;
+}
+
+
+/* Heading */
+
+.login-heading {
+  margin-bottom: 34px;
+}
+
+.login-eyebrow {
+  display: block;
+  margin-bottom: 9px;
+
+  color: var(--accent);
+
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.login-heading h1 {
+  margin: 0;
+
+  color: var(--text-primary);
+
+  font-size: clamp(32px, 3vw, 42px);
+  font-weight: 700;
+  line-height: 1.1;
+
+  letter-spacing: -0.045em;
+}
+
+.login-heading p {
+  margin: 13px 0 0;
+
+  color: var(--text-secondary);
+
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+
+/* =========================================================
+   Form
+========================================================= */
+
+.login-form {
+  width: 100%;
+}
+
+.form-field {
+  margin-bottom: 22px;
+}
+
+.form-field label {
+  display: block;
+  margin-bottom: 9px;
+
+  color: var(--text-primary);
+
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.password-label-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 15px;
+}
+
+.password-label-row a {
+  margin-bottom: 9px;
+
+  color: var(--accent);
+
+  text-decoration: none;
+
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.password-label-row a:hover {
+  text-decoration: underline;
+}
+
+
+/* Inputs */
+
+.input-wrapper {
+  position: relative;
+
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+}
+
+.input-wrapper input {
+  width: 100%;
+  height: 52px;
+
+  padding: 0 48px;
+
+  color: var(--text-primary);
+  background: var(--accent-soft);
+
+  border: 1px solid var(--border);
+  border-radius: 13px;
+
+  outline: none;
+
+  font: inherit;
+  font-size: 14px;
+
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.input-wrapper input::placeholder {
+  color: var(--text-muted);
+}
+
+.input-wrapper input:hover {
+  border-color: var(--accent-medium);
+}
+
+.input-wrapper input:focus {
+  background: var(--surface-solid);
+  border-color: var(--accent);
+
+  box-shadow: 0 0 0 4px var(--accent-soft);
+}
+
+
+/* Input icon */
+
+.input-icon {
+  position: absolute;
+  left: 16px;
+
+  width: 18px;
+  height: 18px;
+
+  display: flex;
+
+  color: var(--accent);
+
+  pointer-events: none;
+}
+
+.input-icon svg,
+.password-toggle svg {
+  width: 100%;
+  height: 100%;
+
+  fill: none;
+
+  stroke: currentColor;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+
+/* Password visibility */
+
+.password-toggle {
+  position: absolute;
+  right: 13px;
+
+  width: 34px;
+  height: 34px;
+
+  padding: 8px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: var(--text-muted);
+  background: transparent;
+
+  border: 0;
+  border-radius: 9px;
+
+  cursor: pointer;
+
+  transition:
+    color 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.password-toggle:hover {
+  color: var(--accent);
+  background: var(--accent-soft);
+}
+
+
+/* =========================================================
+   Login Button
+========================================================= */
+
+.login-submit {
+  width: 100%;
+  height: 52px;
+
+  margin-top: 5px;
+  padding: 0 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 11px;
+
+  color: #fff;
+  background: var(--button-primary);
+
+  border: 0;
+  border-radius: 13px;
+
+  font: inherit;
+  font-size: 15px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  box-shadow: var(--button-shadow);
+
+  transition:
+    background 0.22s ease,
+    transform 0.22s ease,
+    box-shadow 0.22s ease;
+}
+
+.login-submit span {
+  font-size: 19px;
+
+  transition: transform 0.22s ease;
+}
+
+.login-submit:hover {
+  background: var(--button-primary-hover);
+
+  transform: translateY(-2px);
+
+  box-shadow: var(--button-hover-shadow);
+}
+
+.login-submit:hover span {
+  transform: translateX(3px);
+}
+
+
+/* =========================================================
+   Divider + Google
+========================================================= */
+
+.login-divider {
+  margin: 28px 0 22px;
+
+  display: flex;
+  align-items: center;
+  gap: 13px;
+}
+
+.login-divider span {
+  height: 1px;
+  flex: 1;
+
+  background: var(--border);
+}
+
+.login-divider p {
+  margin: 0;
+
+  color: var(--text-muted);
+
+  font-size: 12px;
+
+  white-space: nowrap;
+}
+
+.google-login {
+  width: 100%;
+  height: 50px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  color: var(--text-primary);
+  background: var(--surface-solid);
+
+  border: 1px solid var(--border);
+  border-radius: 13px;
+
+  font: inherit;
+  font-size: 14px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.google-login:hover {
+  background: var(--accent-soft);
+  border-color: var(--accent);
+
+  transform: translateY(-1px);
+
+  box-shadow: 0 8px 22px rgba(109, 40, 217, 0.08);
+}
+
+.google-mark {
+  width: 24px;
+  height: 24px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+}
+
+.google-mark svg {
+  width: 20px;
+  height: 20px;
+
+  display: block;
+}
+
+/* =========================================================
+   Signup + Footer
+========================================================= */
+
+.signup-message {
+  margin: 25px 0 0;
+
+  color: var(--text-secondary);
+
+  text-align: center;
+
+  font-size: 13px;
+}
+
+.signup-message a {
+  margin-left: 5px;
+
+  color: var(--accent);
+
+  text-decoration: none;
+
+  font-weight: 600;
+}
+
+.signup-message a:hover {
+  text-decoration: underline;
+}
+
+.login-footer {
+  margin: auto auto 0;
+  padding-top: 38px;
+
+  color: var(--text-muted);
+
+  text-align: center;
+
+  font-size: 11px;
+}
+
+
+/* =========================================================
+   Focus Accessibility
+========================================================= */
+
+.login-brand:focus-visible,
+.password-label-row a:focus-visible,
+.signup-message a:focus-visible,
+.password-toggle:focus-visible,
+.login-submit:focus-visible,
+.google-login:focus-visible {
+  outline: 3px solid var(--focus-ring);
+  outline-offset: 3px;
+}
+
+
+/* =========================================================
+   Dark Theme
+========================================================= */
+
+body.dark-theme .login-page {
+  background:
+    radial-gradient(
+      circle at 8% 10%,
+      rgba(168, 85, 247, 0.09),
+      transparent 30%
+    ),
+    var(--page-bg);
+}
+
+body.dark-theme .login-shell {
+  box-shadow: 0 28px 80px rgba(0, 0, 0, 0.38);
+}
+
+body.dark-theme .login-visual-panel {
+  background:
+    radial-gradient(
+      circle at 30% 25%,
+      rgba(168, 85, 247, 0.12),
+      transparent 38%
+    ),
+    linear-gradient(
+      145deg,
+      rgba(168, 85, 247, 0.065),
+      rgba(10, 10, 16, 0.32)
+    );
+}
+
+body.dark-theme .showcase-resume,
+body.dark-theme .showcase-github,
+body.dark-theme .showcase-portfolio {
+  box-shadow: 0 22px 52px rgba(0, 0, 0, 0.34);
+}
+
+
+/* =========================================================
+   Tablet
+========================================================= */
+
+@media (max-width: 1050px) {
+  .login-page {
+    padding: 24px;
+  }
+
+  .login-shell {
+    min-height: 680px;
+
+    grid-template-columns: minmax(0, 44%) minmax(0, 56%);
+  }
+
+  .login-visual-panel {
+    padding: 34px 30px;
+  }
+
+  .profile-showcase {
+    max-width: 400px;
+    height: 350px;
+
+    margin-top: 38px;
+  }
+
+  .showcase-resume {
+    width: 185px;
+    height: 245px;
+  }
+
+  .showcase-github {
+    width: 175px;
+    right: -5px;
+  }
+
+  .showcase-portfolio {
+    width: 190px;
+    left: 55px;
+  }
+
+  .login-form-panel {
+    padding: 45px 44px 30px;
+  }
+}
+
+
+/* =========================================================
+   Stacked Tablet
+========================================================= */
+
+@media (max-width: 860px) {
+  .login-page {
+    padding: 18px;
+
+    align-items: flex-start;
+  }
+
+  .login-shell {
+    width: min(100%, 680px);
+    min-height: 0;
+
+    grid-template-columns: 1fr;
+  }
+
+  .login-visual-panel {
+    min-height: 500px;
+
+    padding: 28px 36px;
+
+    border-right: 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .profile-showcase {
+    width: min(100%, 430px);
+    height: 320px;
+
+    margin: 28px auto 16px;
+  }
+
+  .showcase-resume {
+    width: 180px;
+    height: 230px;
+
+    top: 30px;
+  }
+
+  .showcase-github {
+    top: 70px;
+    right: 8px;
+  }
+
+  .showcase-portfolio {
+    left: 70px;
+  }
+
+  .login-visual-copy {
+    margin-top: 10px;
+
+    text-align: center;
+  }
+
+  .login-visual-copy h2,
+  .login-visual-copy p {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .visual-dots {
+    justify-content: center;
+  }
+
+  .login-form-panel {
+    padding: 48px 42px 30px;
+  }
+
+  .login-form-wrapper {
+    margin-top: 0;
+  }
+}
+
+
+/* =========================================================
+   Mobile
+========================================================= */
+
+@media (max-width: 600px) {
+
+  .login-theme-toggle {
+    top: 18px;
+    right: 18px;
+  }
+  .login-page {
+    padding: 10px;
+
+    align-items: flex-start;
+  }
+
+  .login-shell {
+    border-radius: 22px;
+  }
+
+  .login-visual-panel {
+    min-height: 340px;
+
+    padding: 24px 20px;
+  }
+
+  .login-brand {
+    font-size: 20px;
+  }
+
+  .profile-showcase {
+    height: 235px;
+
+    margin: 20px auto 0;
+  }
+
+
+  /* Resume */
+
+  .showcase-resume {
+    width: 135px;
+    height: 180px;
+
+    top: 18px;
+    left: 3px;
+
+    padding: 14px 12px;
+
+    border-radius: 15px;
+  }
+
+  .resume-avatar {
+    width: 28px;
+    height: 28px;
+  }
+
+  .resume-top {
+    gap: 7px;
+    padding-bottom: 10px;
+  }
+
+  .resume-section {
+    margin-top: 11px;
+  }
+
+  .resume-status {
+    display: none;
+  }
+
+
+  /* GitHub */
+
+  .showcase-github {
+    width: 145px;
+
+    top: 42px;
+    right: 0;
+
+    padding: 11px;
+
+    border-radius: 14px;
+  }
+
+  .showcase-icon {
+    width: 30px;
+    height: 30px;
+  }
+
+  .showcase-icon img {
+    width: 19px;
+    height: 19px;
+  }
+
+  .repo-stat {
+    margin-top: 11px;
+  }
+
+
+  /* Portfolio */
+
+  .showcase-portfolio {
+    width: 155px;
+
+    left: 48px;
+
+    border-radius: 14px;
+  }
+
+  .portfolio-browser-bar {
+    height: 24px;
+  }
+
+  .portfolio-project {
+    padding: 8px;
+  }
+
+  .portfolio-thumbnail,
+  .project-placeholder {
+    width: 28px;
+    height: 28px;
+  }
+
+  .portfolio-thumbnail img {
+    width: 18px;
+    height: 18px;
+  }
+
+
+  .login-visual-copy {
+    display: none;
+  }
+
+
+  /* Form */
+
+  .login-form-panel {
+    padding: 38px 20px 26px;
+  }
+
+  .login-heading {
+    margin-bottom: 28px;
+  }
+
+  .login-heading h1 {
+    font-size: 32px;
+  }
+
+  .login-heading p {
+    font-size: 14px;
+  }
+
+  .input-wrapper input {
+    height: 50px;
+
+    font-size: 16px;
+  }
+
+  .login-submit {
+    height: 50px;
+  }
+
+  .google-login {
+    height: 48px;
+  }
+
+  .login-footer {
+    padding-top: 28px;
+  }
+}
+
+
+/* =========================================================
+   Very Small Mobile
+========================================================= */
+
+@media (max-width: 380px) {
+
+  .login-theme-toggle {
+    top: 14px;
+    right: 14px;
+  }
+  .login-page {
+    padding: 6px;
+  }
+
+  .login-visual-panel {
+    min-height: 315px;
+
+    padding: 20px 14px;
+  }
+
+  .profile-showcase {
+    height: 215px;
+  }
+
+  .showcase-resume {
+    width: 125px;
+    height: 165px;
+  }
+
+  .showcase-github {
+    width: 132px;
+  }
+
+  .showcase-portfolio {
+    width: 145px;
+    left: 35px;
+  }
+
+  .login-form-panel {
+    padding: 34px 16px 24px;
+  }
+
+  .password-label-row {
+    align-items: flex-start;
+  }
+
+  .password-label-row a {
+    font-size: 12px;
+  }
+}
+
+
+/* =========================================================
+   Reduced Motion
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .showcase-resume,
+  .showcase-github,
+  .showcase-portfolio,
+  .login-submit,
+  .google-login {
+    transition: none;
+  }
+}

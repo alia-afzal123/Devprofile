@@ -1,0 +1,237 @@
+:root {
+  /* PAGE */
+
+  --page-bg: #ffffff;
+
+  --surface: rgba(255, 255, 255, 0.78);
+  --surface-solid: #ffffff;
+
+
+  /* TEXT */
+
+  --text-primary: #171521;
+  --text-secondary: #5d5969;
+  --text-muted: #8f8999;
+
+
+  /* PURPLE */
+
+  --accent: #6d28d9;
+  --accent-hover: #5f21c7;
+
+  --accent-soft: rgba(109, 40, 217, 0.065);
+  --accent-medium: rgba(109, 40, 217, 0.11);
+
+
+  /* BORDERS */
+
+  --border: rgba(109, 40, 217, 0.12);
+
+
+  /* NAVIGATION */
+
+  --nav-hover-text: #6d28d9;
+
+  --nav-hover-bg:
+    rgba(109, 40, 217, 0.07);
+
+  --nav-hover-shadow:
+    inset 0 0 0 1px rgba(109, 40, 217, 0.04);
+
+  --nav-active-text: #6d28d9;
+
+  --nav-active-bg:
+    rgba(109, 40, 217, 0.07);
+
+  --nav-active-shadow:
+    inset 0 0 0 1px rgba(109, 40, 217, 0.035);
+
+  --nav-reflection:
+    rgba(255, 255, 255, 0.9);
+
+
+  /* BUTTON */
+
+  --button-primary: #6d28d9;
+
+  --button-primary-hover: #5f21c7;
+
+  --button-shadow:
+    0 8px 18px rgba(109, 40, 217, 0.20);
+
+  --button-hover-shadow:
+    0 12px 24px rgba(109, 40, 217, 0.28);
+
+
+  /* NAVBAR */
+
+  --navbar-shadow:
+    0 8px 24px rgba(20, 18, 35, 0.055),
+    inset 0 1px 0 rgba(255, 255, 255, 0.85);
+
+
+  /* MOBILE MENU */
+
+  --mobile-menu-bg:
+    rgba(255, 255, 255, 0.94);
+
+  --mobile-menu-shadow:
+    0 18px 40px rgba(20, 18, 35, 0.12);
+
+
+  /* THEME TOGGLE */
+
+  --sun-color: #6d28d9;
+  --moon-color: #9993a5;
+
+  --toggle-knob-bg: #ffffff;
+
+  --toggle-knob-shadow:
+    0 3px 10px rgba(30, 22, 50, 0.12),
+    inset 0 0 0 1px rgba(109, 40, 217, 0.08);
+
+
+  /* ACCESSIBILITY */
+
+  --focus-ring:
+    rgba(109, 40, 217, 0.22);
+}
+
+
+/* ==================================================
+   DARK THEME
+================================================== */
+
+body.dark-theme {
+  --page-bg: #09090f;
+
+  --surface:
+    rgba(15, 15, 25, 0.82);
+
+  --surface-solid:
+    #11111a;
+
+
+  /* TEXT */
+
+  --text-primary:
+    #f7f5fb;
+
+  --text-secondary:
+    #bdb7c7;
+
+  --text-muted:
+    #898392;
+
+
+  /* PURPLE */
+
+  --accent:
+    #a855f7;
+
+  --accent-hover:
+    #c084fc;
+
+  --accent-soft:
+    rgba(168, 85, 247, 0.12);
+
+  --accent-medium:
+    rgba(168, 85, 247, 0.18);
+
+
+  /* BORDER */
+
+  --border:
+    rgba(168, 85, 247, 0.20);
+
+
+  /* NAVIGATION */
+
+  --nav-hover-text:
+    #e0c4ff;
+
+  --nav-hover-bg:
+    rgba(168, 85, 247, 0.15);
+
+  --nav-hover-shadow:
+    inset 0 0 0 1px rgba(192, 132, 252, 0.15),
+    0 0 18px rgba(168, 85, 247, 0.13);
+
+  --nav-active-text:
+    #d8b4fe;
+
+  --nav-active-bg:
+    linear-gradient(
+      135deg,
+      rgba(168, 85, 247, 0.21),
+      rgba(124, 58, 237, 0.13)
+    );
+
+  --nav-active-shadow:
+    inset 0 0 0 1px rgba(192, 132, 252, 0.14),
+    0 5px 18px rgba(124, 58, 237, 0.08);
+
+  --nav-reflection:
+    rgba(216, 180, 254, 0.28);
+
+
+  /* BUTTON */
+
+  --button-primary:
+    linear-gradient(
+      135deg,
+      #7c3aed,
+      #9333ea
+    );
+
+  --button-primary-hover:
+    linear-gradient(
+      135deg,
+      #8b5cf6,
+      #a855f7
+    );
+
+  --button-shadow:
+    0 8px 24px rgba(124, 58, 237, 0.25);
+
+  --button-hover-shadow:
+    0 12px 30px rgba(124, 58, 237, 0.35);
+
+
+  /* NAVBAR */
+
+  --navbar-shadow:
+    0 12px 36px rgba(0, 0, 0, 0.34),
+    inset 0 1px 0 rgba(255, 255, 255, 0.035);
+
+
+  /* MOBILE MENU */
+
+  --mobile-menu-bg:
+    rgba(17, 17, 26, 0.95);
+
+  --mobile-menu-shadow:
+    0 18px 45px rgba(0, 0, 0, 0.38);
+
+
+  /* TOGGLE */
+
+  --sun-color:
+    #6f697a;
+
+  --moon-color:
+    #d8b4fe;
+
+  --toggle-knob-bg:
+    #1c1926;
+
+  --toggle-knob-shadow:
+    0 3px 12px rgba(0, 0, 0, 0.38),
+    inset 0 0 0 1px rgba(192, 132, 252, 0.15);
+
+
+  /* ACCESSIBILITY */
+
+  --focus-ring:
+    rgba(192, 132, 252, 0.30);
+}

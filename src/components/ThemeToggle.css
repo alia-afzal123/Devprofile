@@ -1,0 +1,121 @@
+.theme-toggle {
+  position: relative;
+
+  width: 68px;
+  height: 36px;
+
+  padding: 0 7px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  border: 1px solid var(--border);
+
+  border-radius: 12px;
+
+  background: var(--accent-soft);
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.theme-icon {
+  width: 16px;
+  height: 16px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  z-index: 2;
+
+  transition:
+    color 0.25s ease,
+    opacity 0.25s ease;
+}
+
+.theme-icon svg {
+  width: 100%;
+  height: 100%;
+
+  fill: none;
+
+  stroke: currentColor;
+
+  stroke-width: 1.8;
+
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.sun-icon {
+  color: var(--sun-color);
+}
+
+.moon-icon {
+  color: var(--moon-color);
+}
+
+.toggle-knob {
+  position: absolute;
+
+  top: 4px;
+  left: 4px;
+
+  width: 27px;
+  height: 27px;
+
+  border-radius: 9px;
+
+  background: var(--toggle-knob-bg);
+
+  box-shadow: var(--toggle-knob-shadow);
+
+  transition:
+    transform 0.28s ease,
+    background-color 0.28s ease,
+    box-shadow 0.28s ease;
+}
+
+.theme-toggle.dark .toggle-knob {
+  transform: translateX(32px);
+}
+
+.theme-toggle:hover {
+  background: var(--accent-medium);
+}
+
+.theme-toggle:focus-visible {
+  outline: 3px solid var(--focus-ring);
+  outline-offset: 3px;
+}
+
+
+/* small phones */
+
+@media (max-width: 380px) {
+  .theme-toggle {
+    width: 62px;
+    height: 34px;
+  }
+
+  .toggle-knob {
+    width: 25px;
+    height: 25px;
+
+    top: 4px;
+  }
+
+  .theme-toggle.dark .toggle-knob {
+    transform: translateX(29px);
+  }
+
+  .theme-icon {
+    width: 15px;
+    height: 15px;
+  }
+}

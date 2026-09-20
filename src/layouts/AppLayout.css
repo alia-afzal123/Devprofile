@@ -1,0 +1,103 @@
+/* =========================================================
+   DevProfile — App Shell
+========================================================= */
+
+.app-layout {
+  width: 100%;
+  min-height: 100svh;
+
+  display: grid;
+  grid-template-columns: 104px minmax(0, 1fr);
+
+  background: var(--page-bg);
+  color: var(--text-primary);
+}
+
+
+/* Main workspace */
+
+.app-workspace {
+  min-width: 0;
+  min-height: 100svh;
+
+  padding: 18px 20px 32px 0;
+}
+
+.app-content {
+  width: 100%;
+  max-width: 1480px;
+
+  margin: 20px auto 0;
+}
+
+
+/* =========================================================
+   Dark
+========================================================= */
+
+body.dark-theme .app-layout {
+  background:
+    radial-gradient(
+      circle at 70% 0%,
+      rgba(124, 58, 237, 0.07),
+      transparent 32%
+    ),
+    var(--page-bg);
+}
+
+
+/* =========================================================
+   Tablet
+========================================================= */
+
+@media (max-width: 1000px) {
+  .app-layout {
+    grid-template-columns: 90px minmax(0, 1fr);
+  }
+
+  .app-workspace {
+    padding-right: 16px;
+  }
+}
+
+
+/* =========================================================
+   Mobile
+========================================================= */
+
+@media (max-width: 760px) {
+
+  .app-layout {
+    display: block;
+
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  .app-workspace {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+
+    padding:
+      12px
+      12px
+      96px;
+  }
+
+  .app-content {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+
+    margin-top: 14px;
+  }
+}
+
+
+@media (max-width: 420px) {
+  .app-workspace {
+    padding-inline: 9px;
+  }
+}

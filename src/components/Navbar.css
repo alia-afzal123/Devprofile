@@ -1,0 +1,455 @@
+.site-header {
+  width: 100%;
+  padding: 14px 20px 0;
+  position: relative;
+  z-index: 1000;
+  overflow: visible;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar {
+  position: relative;
+  width: min(100%, 1240px);
+  min-height: 62px;
+  margin: 0 auto;
+  padding: 6px 8px 6px 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+
+  overflow: visible;
+
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+
+  box-shadow: var(--navbar-shadow);
+
+  transition:
+    background-color 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+/* =========================
+   LOGO
+========================= */
+
+.navbar-logo {
+  flex-shrink: 0;
+  white-space: nowrap;
+  text-decoration: none;
+
+  color: var(--accent);
+
+  font-size: 21px;
+  font-weight: 600;
+  letter-spacing: -0.035em;
+}
+
+.navbar-logo span {
+  color: var(--text-primary);
+  transition: color 0.3s ease;
+}
+
+/* =========================
+   CENTER LINKS
+========================= */
+
+.navbar-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  min-width: 0;
+}
+
+.nav-link {
+  position: relative;
+  padding: 10px 15px;
+
+  overflow: hidden;
+  isolation: isolate;
+
+  color: var(--text-secondary);
+  background: transparent;
+
+  border-radius: 12px;
+
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  white-space: nowrap;
+
+  transition:
+    color 0.22s ease,
+    background-color 0.22s ease,
+    transform 0.22s ease,
+    box-shadow 0.22s ease;
+}
+
+.nav-link::before {
+  content: "";
+  position: absolute;
+  top: -40%;
+  left: -80%;
+
+  width: 42%;
+  height: 180%;
+
+  background: linear-gradient(
+    100deg,
+    transparent,
+    var(--nav-reflection),
+    transparent
+  );
+
+  transform: skewX(-20deg);
+  transition: left 0.48s ease;
+
+  pointer-events: none;
+  z-index: -1;
+}
+
+.nav-link:hover {
+  color: var(--nav-hover-text);
+  background: var(--nav-hover-bg);
+
+  transform: translateY(-1px);
+  box-shadow: var(--nav-hover-shadow);
+}
+
+.nav-link:hover::before {
+  left: 135%;
+}
+
+.nav-link.active {
+  color: var(--nav-active-text);
+  background: var(--nav-active-bg);
+  box-shadow: var(--nav-active-shadow);
+}
+
+/* =========================
+   RIGHT ACTIONS
+========================= */
+
+.navbar-actions {
+  margin-left: auto;
+
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  flex-shrink: 0;
+}
+
+/* LOGIN */
+
+.login-link {
+  padding: 10px 13px;
+
+  color: var(--text-primary);
+  border-radius: 10px;
+
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+
+  transition:
+    color 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.login-link:hover {
+  color: var(--nav-hover-text);
+  background: var(--nav-hover-bg);
+}
+
+/* SIGN UP */
+
+.signup-button {
+  min-height: 42px;
+  padding: 0 18px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #ffffff;
+  background: var(--button-primary);
+
+  border-radius: 12px;
+
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+
+  box-shadow: var(--button-shadow);
+
+  transition:
+    background 0.22s ease,
+    transform 0.22s ease,
+    box-shadow 0.22s ease;
+}
+
+.signup-button:hover {
+  background: var(--button-primary-hover);
+  transform: translateY(-2px);
+  box-shadow: var(--button-hover-shadow);
+}
+
+/* =========================
+   HAMBURGER
+========================= */
+
+.menu-button {
+  position: relative;
+  z-index: 1002;
+
+  width: 44px;
+  height: 44px;
+  padding: 0;
+
+  display: none;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 5px;
+
+  flex-shrink: 0;
+
+  background: var(--accent-soft);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.menu-button:hover {
+  background: var(--nav-hover-bg);
+}
+
+.menu-button span {
+  width: 18px;
+  height: 2px;
+
+  background: var(--text-primary);
+  border-radius: 999px;
+
+  transition:
+    transform 0.25s ease,
+    opacity 0.25s ease,
+    background-color 0.25s ease;
+}
+
+.menu-button.open span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.menu-button.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-button.open span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* =========================
+   MOBILE / TABLET MENU
+========================= */
+
+.mobile-menu {
+  position: absolute;
+  top: calc(100% + 10px);
+  left: 0;
+  right: 0;
+  z-index: 1001;
+
+  width: 100%;
+  padding: 10px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  transform: translateY(-8px);
+
+  background: var(--mobile-menu-bg);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+
+  box-shadow: var(--mobile-menu-shadow);
+
+  transition:
+    opacity 0.2s ease,
+    visibility 0.2s ease,
+    transform 0.2s ease;
+}
+
+.mobile-menu.show {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+
+  transform: translateY(0);
+}
+
+.mobile-menu a {
+  padding: 13px 14px;
+
+  color: var(--text-secondary);
+  border-radius: 11px;
+
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+
+  transition:
+    color 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.mobile-menu a:hover,
+.mobile-menu a.active {
+  color: var(--nav-hover-text);
+  background: var(--nav-hover-bg);
+}
+
+.mobile-menu .mobile-signup {
+  margin-top: 5px;
+
+  color: #ffffff;
+  background: var(--button-primary);
+
+  text-align: center;
+}
+
+.mobile-menu .mobile-signup:hover {
+  color: #ffffff;
+  background: var(--button-primary-hover);
+}
+
+/* =========================
+   FOCUS ACCESSIBILITY
+========================= */
+
+.navbar a:focus-visible,
+.menu-button:focus-visible {
+  outline: 3px solid var(--focus-ring);
+  outline-offset: 3px;
+}
+
+/* =========================
+   TABLET + MOBILE NAVIGATION
+========================= */
+
+@media (max-width: 1000px) {
+  .site-header {
+    width: 100%;
+    padding: 10px 16px 0;
+  }
+
+  .navbar {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    min-height: 64px;
+
+    margin: 0;
+    padding: 7px 8px 7px 16px;
+
+    gap: 8px;
+    border-radius: 18px;
+  }
+
+  .navbar-links,
+  .login-link,
+  .signup-button {
+    display: none;
+  }
+
+  .navbar-logo {
+    font-size: 20px;
+  }
+
+  .navbar-actions {
+    margin-left: auto;
+    gap: 7px;
+  }
+
+  .menu-button {
+    display: flex;
+  }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+  .site-header {
+    padding: 10px 12px 0;
+  }
+
+  .navbar {
+    padding-left: 14px;
+  }
+
+  .navbar-logo {
+    font-size: 19px;
+  }
+
+  .navbar-actions {
+    gap: 6px;
+  }
+
+  .mobile-menu {
+    top: calc(100% + 8px);
+  }
+}
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media (max-width: 380px) {
+  .site-header {
+    padding-inline: 10px;
+  }
+
+  .navbar {
+    padding-left: 12px;
+  }
+
+  .navbar-logo {
+    font-size: 18px;
+  }
+
+  .navbar-actions {
+    gap: 5px;
+  }
+
+  .menu-button {
+    width: 40px;
+    height: 40px;
+  }
+}

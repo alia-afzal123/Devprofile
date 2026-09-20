@@ -1,16 +1,62 @@
-# React + Vite
+# DevProfile
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+DevProfile is an AI-powered developer profile analysis platform that helps developers evaluate and improve their professional presence across their Resume, GitHub, and Portfolio.
 
-Currently, two official plugins are available:
+The platform analyzes each profile independently, identifies weaknesses, provides actionable improvements, and includes AI-powered copilots for contextual guidance.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Features
 
-## React Compiler
+- Resume Analyzer — analyzes uploaded resumes and provides structured scoring, weaknesses, and improvement suggestions.
+- GitHub Analyzer — evaluates GitHub profiles and repositories using real GitHub data.
+- Portfolio Analyzer — analyzes live developer portfolio websites and provides improvement recommendations.
+- AI Copilot — provides contextual guidance based on analysis results.
+- Analysis History — stores previous analyses for each authenticated user.
+- User Authentication — secure signup, login, password recovery, and protected routes.
+- Personal Dashboard — displays the latest Resume, GitHub, and Portfolio analysis results.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Tech Stack
 
-## Expanding the ESLint configuration
+### Frontend
+- React
+- Vite
+- JavaScript
+- React Router
+- CSS
+- Axios
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Backend & Database
+- Supabase
+- PostgreSQL
+- Supabase Authentication
+- Supabase Edge Functions
+- Row Level Security (RLS)
+
+### AI & External Services
+- Groq
+- Google Gemini
+- GitHub REST API
+- Browserless
+
+## How It Works
+
+1. Create an account or log in.
+2. Choose Resume, GitHub, or Portfolio Analyzer.
+3. Submit the required profile information.
+4. DevProfile processes the data using backend services and AI models.
+5. Receive category scores, weaknesses, and actionable recommendations.
+6. Ask the AI Copilot follow-up questions about the analysis.
+7. Previous analyses are securely stored in History.
+
+## Security
+
+DevProfile uses Supabase Authentication and PostgreSQL Row Level Security to isolate user data.
+
+Sensitive API keys and service credentials are stored server-side and are never exposed through the frontend repository.
+
+## Local Development
+
+Clone the repository:
+
+```bash
+git clone https://github.com/alia-afzal123/Devprofile.git
+cd devprofile

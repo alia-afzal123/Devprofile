@@ -13,6 +13,18 @@ import "./Login.css";
 const contributionCells = Array.from({ length: 12 });
 
 function GoogleIcon() {
+  const handleGoogleLogin = async () => {
+  const { error } = await supabase.auth.signInWithOAuth({
+    provider: "google",
+    options: {
+      redirectTo: `${window.location.origin}/dashboard`,
+    },
+  });
+
+  if (error) {
+    console.error("Google login error:", error.message);
+  }
+};
   return (
     <svg viewBox="0 0 24 24" aria-hidden="true">
       <path
@@ -358,17 +370,18 @@ function Login() {
                 <span />
               </div>
 
-              {/* Google - configure later */}
-              <button
-                type="button"
-                className="google-login"
-              >
-                <span className="google-mark">
-                  <GoogleIcon />
-                </span>
+            {/* Google Login */}
+<button
+  type="button"
+  className="google-login"
+  onClick={handleGoogleLogin}
+>
+  <span className="google-mark">
+    <GoogleIcon />
+  </span>
 
-                Continue with Google
-              </button>
+  Continue with Google
+</button>
 
               {/* Signup */}
               <p className="signup-message">

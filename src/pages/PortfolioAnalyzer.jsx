@@ -4,7 +4,7 @@ import ReactMarkdown from "react-markdown";
 import { supabase } from "../lib/supabase";
 import { saveAnalysis } from "../services/analysisService";
 
-import "../styles/PortfolioAnalyzer.css";
+import "./PortfolioAnalyzer.css";
 
 function PortfolioAnalyzer() {
   const [portfolioUrl, setPortfolioUrl] =
@@ -253,8 +253,28 @@ function PortfolioAnalyzer() {
 
 
   return (
+    
     <main className="portfolio-analyzer-page">
+    {/* =========================
+        PORTFOLIO HERO
+    ========================== */}
 
+    <section className="portfolio-hero">
+      <div className="portfolio-hero-badge">
+        <span className="portfolio-hero-dot"></span>
+        PORTFOLIO INTELLIGENCE
+      </div>
+
+      <h1 className="portfolio-hero-title">
+        See your portfolio
+        <span> through a recruiter's eyes.</span>
+      </h1>
+
+      <p className="portfolio-hero-description">
+        Discover how clearly your portfolio communicates your skills,
+        projects, technical evidence, and professional value.
+      </p>
+    </section>
       <section className="portfolio-analyzer-shell">
 
         {/* =========================

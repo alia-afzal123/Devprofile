@@ -57,11 +57,19 @@ function Login() {
         password,
       });
 
-      if (error) {
-        alert("Login error: " + error.message);
-        console.error("Login error:", error);
-        return;
-      }
+if (error) {
+  if (error.message === "Invalid login credentials") {
+    alert(
+      "Email or password is incorrect. If you don't have an account yet, please Sign Up first. If you forgot your password, use Forgot Password."
+    );
+  } else if (error.message === "Email not confirmed") {
+    alert("Please verify your email before logging in.");
+  } else {
+    alert(error.message || "Unable to log in. Please try again.");
+  }
+
+  return;
+}
 
       console.log("Login successful:", data);
 

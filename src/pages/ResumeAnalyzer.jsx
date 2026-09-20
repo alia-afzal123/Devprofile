@@ -260,7 +260,7 @@ const handleCopilotSend = async (event) => {
                   </p>
 
                   <label className="resume-upload-button">
-                    <span className="resume-upload-symbol">↥</span>
+                    <span className="resume-upload-symbol">⇧</span>
                     Choose Resume
 
                     <input

@@ -8,21 +8,17 @@
 .portfolio-analyzer-shell {
   width: 100%;
   max-width: 1280px;
-  height: calc(100vh - 125px);
-  min-height: 650px;
-  margin: 0 auto;
-
+  margin: 18px auto 0;
   display: grid;
-  grid-template-columns:
-    minmax(0, 1.08fr)
-    minmax(520px, 0.92fr);
-
+  grid-template-columns: 1fr 1fr;
   gap: 18px;
+  align-items: stretch;
 }
 
 .portfolio-workspace,
 .portfolio-analysis-panel {
   min-width: 0;
+  min-height: 440px;
   border: 1px solid #ece8f1;
   border-radius: 18px;
   background: #fff;
@@ -140,7 +136,6 @@
 /* RIGHT */
 
 .portfolio-analysis-panel {
-  height: 100%;
   overflow: hidden;
 }
 
@@ -593,13 +588,9 @@
     grid-template-columns: 1fr;
   }
 
-  .portfolio-workspace {
-    min-height: 520px;
-  }
-
+  .portfolio-workspace,
   .portfolio-analysis-panel {
-    min-height: 650px;
-    height: 75vh;
+    min-height: 440px;
   }
 }
 
@@ -630,5 +621,140 @@
 
   .portfolio-copilot-input button {
     width: 100%;
+  }
+}
+/* ========================================
+   PORTFOLIO HERO — MATCH GITHUB STYLE
+======================================== */
+
+.portfolio-hero {
+  position: relative;
+  padding: 40px 48px 38px;
+  overflow: hidden;
+
+  background-color: #fbfaff;
+  background-image:
+    linear-gradient(rgba(124, 58, 237, 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(124, 58, 237, 0.07) 1px, transparent 1px);
+
+  background-size: 28px 28px;
+}
+
+
+/* Badge */
+
+.portfolio-hero-badge {
+  width: fit-content;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  padding: 7px 13px;
+  margin-bottom: 22px;
+
+  border: 1px solid #d9ccff;
+  border-radius: 999px;
+
+  background: #f8f5ff;
+
+  color: #6d28d9;
+
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  line-height: 1;
+}
+
+.portfolio-hero-dot {
+  width: 6px;
+  height: 6px;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+  background: #7c3aed;
+}
+
+
+/* Main heading */
+
+.portfolio-hero-title {
+  max-width: 950px;
+
+  margin: 0;
+
+  color: #17131f;
+
+  font-size: clamp(48px, 4.2vw, 68px);
+  font-weight: 800;
+
+  line-height: 0.98;
+  letter-spacing: -0.045em;
+}
+
+
+/* Purple second line */
+
+.portfolio-hero-title span {
+  display: block;
+
+  color: #6d28d9;
+}
+
+
+/* Description */
+
+.portfolio-hero-description {
+  max-width: 780px;
+
+  margin: 22px 0 0;
+
+  color: #625b70;
+
+  font-size: 15px;
+  font-weight: 400;
+
+  line-height: 1.65;
+}
+
+
+/* ========================================
+   RESPONSIVE
+======================================== */
+
+@media (max-width: 900px) {
+  .portfolio-hero {
+    padding: 36px 30px;
+  }
+
+  .portfolio-hero-title {
+    font-size: clamp(42px, 6vw, 58px);
+  }
+}
+
+
+@media (max-width: 600px) {
+  .portfolio-hero {
+    padding: 28px 20px 30px;
+    background-size: 24px 24px;
+  }
+
+  .portfolio-hero-badge {
+    margin-bottom: 18px;
+    padding: 6px 10px;
+    font-size: 9px;
+  }
+
+  .portfolio-hero-title {
+    font-size: 38px;
+    line-height: 1.02;
+    letter-spacing: -0.035em;
+  }
+
+  .portfolio-hero-description {
+    margin-top: 18px;
+    font-size: 14px;
+    line-height: 1.6;
   }
 }

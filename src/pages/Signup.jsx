@@ -92,15 +92,27 @@ if (data.user) {
     alert("Something went wrong.");
   }
 };
-  const handleGoogleSignup = async () => {
+const handleGoogleSignup = async () => {
+  try {
     const { error } = await supabase.auth.signInWithOAuth({
       provider: "google",
+      options: {
+        redirectTo: `${window.location.origin}/dashboard`,
+        queryParams: {
+          prompt: "select_account",
+        },
+      },
     });
 
     if (error) {
-      console.error("Google signup error:", error.message);
+      console.error("Google signup error:", error);
+      alert("Unable to continue with Google: " + error.message);
     }
-  };
+  } catch (error) {
+    console.error("Google signup error:", error);
+    alert("Unable to continue with Google. Please try again.");
+  }
+};
 
   return (
     <main className="login-page signup-page">

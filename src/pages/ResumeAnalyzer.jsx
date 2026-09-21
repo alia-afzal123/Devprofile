@@ -5,14 +5,13 @@ import { supabase } from "../lib/supabase";
 import { saveAnalysis } from "../services/analysisService";
 import * as pdfjsLib from "pdfjs-dist";
 import pdfWorker from "pdfjs-dist/build/pdf.worker.min.mjs?url";
-
 pdfjsLib.GlobalWorkerOptions.workerSrc = pdfWorker;
 import "./ResumeAnalyzer.css";
 
 
 function ResumeAnalyzer() {
-  const [selectedFile, setSelectedFile] = useState(null);
-  const [analysisResult, setAnalysisResult] = useState(null);
+const [selectedFile, setSelectedFile] = useState(null);
+const [analysisResult, setAnalysisResult] = useState(null);
 const [loading, setLoading] = useState(false);
 const [errorMessage, setErrorMessage] = useState("");
 const [resumeText, setResumeText] = useState("");
@@ -21,8 +20,8 @@ const [copilotMessages, setCopilotMessages] = useState([]);
 const [copilotInput, setCopilotInput] = useState("");
 const [copilotLoading, setCopilotLoading] = useState(false);
 const [copilotError, setCopilotError] = useState("");
-  const handleFileChange = (event) => {
-    const file = event.target.files[0];
+const handleFileChange = (event) => {
+const file = event.target.files[0];
     if (file) setSelectedFile(file);
   };
 

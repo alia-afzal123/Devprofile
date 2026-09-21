@@ -12,7 +12,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 18px;
-  align-items: stretch;
+ align-items: stretch;
 }
 
 .portfolio-workspace,
@@ -25,6 +25,10 @@
 }
 
 .portfolio-workspace {
+  height: calc(120vh - 260px);
+  min-height: 620px;
+  max-height: 760px;
+
   display: grid;
   place-items: center;
   padding: 38px;
@@ -136,9 +140,11 @@
 /* RIGHT */
 
 .portfolio-analysis-panel {
+  height: calc(120vh - 260px);
+  min-height: 620px;
+  max-height: 1900px;
   overflow: hidden;
 }
-
 .portfolio-empty-state {
   height: 100%;
   display: grid;
@@ -185,9 +191,13 @@
 
 .portfolio-result-report {
   height: 100%;
+  min-height: 0;
+
   padding: 22px;
+
   overflow-y: auto;
   overflow-x: hidden;
+
   scrollbar-width: thin;
   scrollbar-color: #b992ec transparent;
 }
